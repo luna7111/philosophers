@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/28 18:22:29 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/28 18:28:11 by ldel-val          ``                     */
+/*   Updated: 2025/02/28 18:33:38 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,33 @@
 # define ALIVE 0
 # define DEAD 1
 # define FINISHED 2
+
+typedef struct s_philo
+{
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				time_to_die;
+	int				iterations;
+	int				id;
+	int				philo_nb;
+	int				state;
+	long long		ate;
+	long long		start_timestamp;
+	pthread_mutex_t	*left_fork;
+	pthread_mutex_t	*right_fork;
+}	t_philo;
+
+typedef struct s_table
+{
+	int				philo_nb;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				time_to_die;
+	int				iterations;
+	long long		start_timestamp;
+	t_philo			*philos;
+	pthread_mutex_t	*forks;
+	pthread_t		*threads;
+}	t_table;
 
 #endif
