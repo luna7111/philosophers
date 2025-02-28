@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/28 18:36:11 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/28 18:39:10 by ldel-val          ``                     */
+/*   Updated: 2025/02/28 18:51:07 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,18 @@ int	ft_atoi(char *str)
 }
 //the program does not accept negative values nor values bigger than INT_MAX
 //thats why the while condition is always cheching for int overflow
+
+long long	current_time_msec(void)
+{
+	struct timeval	tv;
+	gettimeofday(&tv, NULL);
+	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
+}
+//returns the current time (when called) in miliseconds
+
+long long	time_passed_msec(t_philo *philo)
+{
+	return (current_time_msec() - philo->start_timestamp);
+}
+//returns the difference between the current time and the time the
+//programm started
