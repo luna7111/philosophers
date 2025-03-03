@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/28 18:36:11 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/28 18:51:07 by ldel-val          ``                     */
+/*   Updated: 2025/03/03 18:08:51 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	ft_atoi(char *str)
 long long	current_time_msec(void)
 {
 	struct timeval	tv;
+
 	gettimeofday(&tv, NULL);
 	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
 }
