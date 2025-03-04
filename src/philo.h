@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/28 18:22:29 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/28 18:39:39 by ldel-val          ``                     */
+/*   Updated: 2025/03/04 09:43:11 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,15 @@ typedef struct s_table
 	pthread_mutex_t	*forks;
 	pthread_t		*threads;
 }	t_table;
+
+void		*philo_thread(void *philo);
+
+int			ft_atoi(char *str);
+long long	current_time_msec(void);
+long long	time_passed_msec(long long timestamp);
+
+int			is_philo_dead(t_philo *philo);
+
+
 
 #endif
