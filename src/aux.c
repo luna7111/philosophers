@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/28 18:36:11 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/03/03 18:08:51 by ldel-val          ``                     */
+/*   Updated: 2025/03/04 09:41:49 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ long long	current_time_msec(void)
 }
 //returns the current time (when called) in miliseconds
 
-long long	time_passed_msec(t_philo *philo)
+long long	time_passed_msec(long long timestamp)
 {
-	return (current_time_msec() - philo->start_timestamp);
+	return (current_time_msec() - timestamp);
 }
 //returns the difference between the current time and the time the
 //programm started
